@@ -399,8 +399,9 @@ int main() {
     cout << "1 Get\n2 Delete\n3 Print Tree\n4 Print full bin file\n-1 End\n";
     int input;
     string name;
-    
+    //Имя бинарного файла в котором хранится вся информация
     string binName = "data";
+    //Poggers.txt файл с исходными записями, можно изменить название
     CreateBinFile("Poggers.txt", binName);
     vector<record> R = outBinFile(binName);
     for (int i = 0; i < R.size(); ++i) {
@@ -444,17 +445,5 @@ int main() {
         }
         cin >> input;
     }
-
-    /*bst.insert(55);
-    bst.insert(40);
-    bst.insert(65);
-    bst.insert(60);
-    bst.insert(75);
-    bst.insert(57);
-
-    bst.printTree();
-    cout << endl
-        << "After deleting" << endl;
-    bst.deleteNode(40);
-    bst.printTree();*/
 }
+

@@ -1,7 +1,12 @@
 #include "BINWORK.h"
 
 
-//1 создание бинарного файла из текстового
+/// <summary>
+/// Создание бинарного файла на базе текстового
+/// </summary>
+/// <param name="nametf">Имя текстового файла</param>
+/// <param name="namebf">Имя бинарного файла который будет создан</param>
+/// <returns></returns>
 int CreateBinFile(string nametf, string namebf) {
 
 	ifstream itf(nametf);
@@ -21,7 +26,11 @@ int CreateBinFile(string nametf, string namebf) {
 	}
 	return 1;
 }
-//2 вывод бинарного файла
+/// <summary>
+/// Парсинг бинарного файла
+/// </summary>
+/// <param name="namebf">Имя файла</param>
+/// <returns>Вектор всей информации из бинарника</returns>
 vector<record> outBinFile(string namebf) {
 	vector<record> ans;
 	fstream obf(namebf, ios::in | ios::binary);
@@ -39,6 +48,12 @@ vector<record> outBinFile(string namebf) {
 	return ans;
 }
 
+/// <summary>
+/// Чтение одной записи из бинарника
+/// </summary>
+/// <param name="namebf">Имя файла</param>
+/// <param name="pos">Номер строки начиная с 0</param>
+/// <returns>Запись</returns>
 record readRecordFromBin(string namebf, int pos) {
 	fstream obf(namebf, ios::in | ios::binary);
 	if (obf.is_open()) {
@@ -55,7 +70,11 @@ record readRecordFromBin(string namebf, int pos) {
 	}
 }
 
-
+/// <summary>
+/// Удаление записи
+/// </summary>
+/// <param name="namebf">Имя файла</param>
+/// <param name="pos">Позиция записи начиная с 0</param>
 void deleteRecord(string namebf, int pos) {
 	fstream obf(namebf, ios::in | ios::binary);
 	vector<record> tmp;

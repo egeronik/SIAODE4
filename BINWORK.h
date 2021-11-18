@@ -11,7 +11,7 @@ using namespace std;
 
 struct record {
 	int key = 0;
-	char data[20] = "";
+	char data[50] = "";
 };
 
 int CreateBinFile(string nametf, string namebf);
